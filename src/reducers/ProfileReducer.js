@@ -1,4 +1,6 @@
-const INITIAL_STATE = {
+import { PROFILE_UPDATED } from '../actions/ProfileAction';
+
+const initialState = {
   profile: {
   	name: '',
   	mobile: '',
@@ -6,7 +8,7 @@ const INITIAL_STATE = {
   }
 };
 
-const ProfileReducer = (state = INITIAL_STATE, action) => {
+const ProfileReducer = (state = initialState, action) => {
   switch (action.type) {
     case PROFILE_UPDATED: 
       return { ...state, profile: action.payload };

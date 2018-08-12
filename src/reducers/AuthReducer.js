@@ -1,14 +1,16 @@
-const INITIAL_STATE = {
+import { LOGIN, LOGOUT } from '../actions/AuthAction';
+
+const initialState = {
   authToken: '',
   email: '',
 };
 
-const AuthReducer = (state = INITIAL_STATE, action) => {
+const AuthReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN: 
       return { ...state, ...action.payload };
     case LOGOUT:
-      return { ...state, ...INITIAL_STATE };
+      return { ...state, ...initialState };
     default:
       return state;
   }
