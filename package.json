@@ -1,0 +1,45 @@
+{
+  "name": "helloreactnative",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "start-emulator": "$ANDROID_HOME/emulator/emulator @Nexus_5X_API_26",
+    "generate-signed-apk": "cd android && ./gradlew assembleRelease",
+    "clean-android": "cd android && ./gradlew clean"
+  },
+  "dependencies": {
+    "react": "16.4.1",
+    "react-native": "0.56.0",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-jest": "23.4.2",
+    "babel-preset-react-native": "^5",
+    "jest": "23.5.0",
+    "react-test-renderer": "16.4.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "description": "A simple react-native app with redux implementing login-signup and navigation",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/varunon9/hello-react-native.git"
+  },
+  "keywords": [
+    "react-native-redux",
+    "react-native",
+    "react-native-navigation",
+    "react-native-login-signup"
+  ],
+  "author": "Varun Kumar <varunon9@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/varunon9/hello-react-native/issues"
+  },
+  "homepage": "https://github.com/varunon9/hello-react-native#readme"
+}
