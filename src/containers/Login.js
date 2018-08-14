@@ -103,7 +103,7 @@ const styles=StyleSheet.create({
 
   input: {
     margin: 15,
-    height: 40,
+    height: 50,
     borderColor: '#7a42f4',
     borderWidth: 1
   },
@@ -112,11 +112,12 @@ const styles=StyleSheet.create({
     backgroundColor: '#7a42f4',
     padding: 10,
     margin: 15,
-    height: 40,
+    height: 50,
   },
 
   submitButtonText: {
     color: 'white',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontSize: 15
   }
 });

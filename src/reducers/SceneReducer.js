@@ -1,7 +1,7 @@
 import { ActionConst } from 'react-native-router-flux';
 
 const initialState = {
-  scene: 'drawer'
+  scene: 'login'
 };
 
 const SceneReducer = (state = initialState, action) => {

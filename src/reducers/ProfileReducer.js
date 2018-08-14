@@ -11,7 +11,6 @@ const initialState = {
 const ProfileReducer = (state = initialState, action) => {
   switch (action.type) {
     case PROFILE_UPDATED: 
-      console.log(action);
       return { ...state, profile: action.payload };
     default:
       return state;
