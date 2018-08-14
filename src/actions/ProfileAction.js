@@ -7,10 +7,25 @@ export const PROFILE_UPDATED = 'PROFILE_UPDATED';
  * function then it automatically wraps the function with two arguments- 
  * dispatch and getState (both are functions)
  *
- * We no longer need to provide wrapper in `mapDispatchToProps` function 
+ * We no longer need to provide `dispatch` arg in `mapDispatchToProps` function 
  */
 export const updateProfile = (profileDetails) => {
-  return (dispatch/*, getState*/) => {
-
+  // if not using promise
+  /*const action = {
+    type: PROFILE_UPDATED,
+    payload: profileDetails
   };
+  return action;*/
+
+  // if using promise
+  return (dispatch/*, getState*/) => {
+  	// using setTimeout to demo promise
+  	setTimeout(() => {
+      dispatch({
+        type: PROFILE_UPDATED,
+        payload: profileDetails
+      });
+    }, 500);
+  };
+  
 }

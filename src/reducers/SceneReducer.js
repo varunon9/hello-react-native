@@ -1,13 +1,13 @@
 import { ActionConst } from 'react-native-router-flux';
 
 const initialState = {
-  scene: {}
+  scene: 'drawer'
 };
 
 const SceneReducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionConst.FOCUS:
-      return { ...state, scene: action.scene };
+      return { ...state, scene: action.payload };
     default:
       return state;
   }

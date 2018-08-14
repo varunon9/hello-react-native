@@ -4,21 +4,22 @@ import { Button } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 
+import { logout, LOGOUT } from '../actions/AuthAction';
+
 
 class DrawerContent extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props.scene);
     this.navigateToScene = this.navigateToScene.bind(this);
   }
 
   navigateToScene(key) {
-    return;
     if (key === 'logout') {
-      // clear data and navigate to login
+      // not using mapDispatchToProps
+      this.props.dispatch(logout());
       key = 'login';
     }
-    Actions[key]();
+    Actions[key]({});
   }
 
   render () {
@@ -30,19 +31,19 @@ class DrawerContent extends React.Component {
             icon={{name: 'trash-o', type: 'font-awesome', size: 20}}
             title='Home'
             buttonStyle={styles.button}
-            onPress={this.navigateToScene('home')} />
+            onPress={() => {this.navigateToScene('home')}} />
           <Button
             raised
             icon={{name: 'umbrella', type: 'font-awesome', size: 20}}
             title='Profile'
             buttonStyle={styles.button}
-            onPress={this.navigateToScene('profile')} />
+            onPress={() => {this.navigateToScene('profile')}} />
           <Button
             raised
             icon={{name: 'user-circle', type: 'font-awesome', size: 20}}
             title='Logout'
             buttonStyle={styles.button}
-            onPress={this.navigateToScene('logout')} />
+            onPress={() => {this.navigateToScene('logout')}} />
         </ScrollView>
       </View>
     )
@@ -52,13 +53,19 @@ class DrawerContent extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    padding: 0
   },
   button: {
-    backgroundColor: '#E71D36'
+    backgroundColor: '#7a42f4',
+    margin: 0
   }
 });
 
 const mapStateToProps = (state) => (state.scene);
 
+/**
+ * deliberately not using mapDispatchToProps
+ * notice how `logout` is being used
+ */ 
 export default connect(mapStateToProps)(DrawerContent);
